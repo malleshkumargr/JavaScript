@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Count</title>
+    </head>
+    <body>
+        <h1 id="value"></h1>
+        <button id="btn">+</button>
+        <button id="decrementBtn">-</button>
+        <button id="resetBtn">reset</button>
+        <script>
+            const valueHandle = document.getElementById('value')
+            const btnHandle = document.getElementById('btn')
+            const decrementBtnHandle = document.getElementById('decrementBtn')
+            const resetBtnHandle = document.getElementById('resetBtn')
+
+            const c1 = {
+                count: 0,
+                up: function() {
+                    this.count += 1
+                    return this.count
+                },
+                down: function() {
+                    this.count -= 1
+                    return this.count
+                },
+                reset: function() {
+                    this.count = 0
+                    return this.count
+                }
+            }
+            valueHandle.innerHTML = c1.count;
+
+            btnHandle.addEventListener('click', function(){
+                valueHandle.innerHTML = c1.up()
+            })
+
+            decrementBtnHandle.addEventListener('click', function(){
+                valueHandle.innerHTML = c1.down()
+            })
+
+            resetBtnHandle.addEventListener('click', function(){
+                valueHandle.innerHTML = c1.reset()
+            })
+
+        </script>
+    </body>
+</html>

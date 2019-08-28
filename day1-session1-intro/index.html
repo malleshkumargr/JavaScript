@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <body>
+            <script>
+              //  console.log('Hello World');
+               var name = prompt('Enter your name');
+               console.log('Welcome to Guess game '+name);
+               var targetNumber = Math.round(Math.random() * 100);
+               console.log("Random number generated for guessing: "+targetNumber);
+               var maxNoOfGuessess = 10;
+               var guessNumber;
+
+               //target
+                var numberOfGuessesLeft = maxNoOfGuessess;
+               for(var playerGuessCout = 1; playerGuessCout <= maxNoOfGuessess; playerGuessCout++) {
+                   
+                   console.log('the number of guesses left: '+numberOfGuessesLeft)
+                   guessNumber = prompt('Guess My Number');
+                   if(guessNumber > targetNumber) {
+                       console.log('Oops, Your guess was HIGH');
+
+                   } else if(guessNumber < targetNumber) {
+                       console.log('Oops, Your guess was LOW');
+                   } else {
+                        console.log('Good job, '+name+'! You guessed my number in '+playerGuessCout+' guesses!');
+                        break;
+                    }   
+                   
+                   numberOfGuessesLeft--;
+               }
+               if(guessNumber != targetNumber) {
+                console.log('Sorry. You didn\'t get my number. My number was '+targetNumber);
+               }
+
+               
+            
+            </script>
+        </body>
+    </head>
+</html>
